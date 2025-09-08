@@ -11,10 +11,10 @@ import { useState } from "react";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { BeatLoader } from "react-spinners";
-import emailjs from "@emailjs/browser";
-import SocialButton from "./SocialButton";
-import { LuMail, LuPhone } from "react-icons/lu";
+import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import SocialButton from "./SocialButton";
+import emailjs from "@emailjs/browser";
 
 // form fields
 interface FormValues {
@@ -141,7 +141,7 @@ const Contact = () => {
               borderRadius="100%"
               p={2}
             >
-              <LuMail size={20} color="white" />
+              <Mail size={20} color="white" />
             </Box>
             <Text color="blackAlpha.700" fontSize={{ base: "sm", md: "md" }}>
               info@radiancereach.org
@@ -158,7 +158,7 @@ const Contact = () => {
               borderRadius="100%"
               p={2}
             >
-              <LuPhone size={20} color="white" />
+              <Phone size={20} color="white" />
             </Box>
             <Text color="blackAlpha.700" fontSize={{ base: "sm", md: "md" }}>
               +2347012345678

@@ -8,7 +8,7 @@ import {
   useDisclosure,
   Stack,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../assets/LOGO.png";
 
@@ -175,7 +175,7 @@ const Navbar = () => {
           color="#3e6389"
           bg="none"
         >
-          {open ? <CloseIcon boxSize="16" /> : <HamburgerIcon boxSize="24" />}
+          {open ? <X size={16} /> : <Menu size={24} />}
         </IconButton>
       </Flex>
 

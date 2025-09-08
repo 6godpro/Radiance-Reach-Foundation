@@ -1,4 +1,4 @@
-import { ArrowUpIcon } from "@chakra-ui/icons";
+import { ArrowUpIcon } from "lucide-react";
 import { IconButton } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";

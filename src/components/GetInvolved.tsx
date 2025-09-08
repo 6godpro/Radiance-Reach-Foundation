@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Box, SimpleGrid, Text, Button, List } from "@chakra-ui/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { LuHandshake, LuCircleCheck } from "react-icons/lu";
+import { Handshake, CircleCheck } from "lucide-react";
 import { FaDonate } from "react-icons/fa";
 import { MdOutlineVolunteerActivism } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -28,7 +28,7 @@ const GetInvolved = () => {
       cta: "Join Volunteers",
     },
     {
-      icon: LuHandshake,
+      icon: Handshake,
       title: "Partner",
       description:
         "Collaborate with us as a corporate partner or organization. Together, we can amplify our impact and create sustainable solutions that benefit communities worldwide.",
@@ -175,7 +175,7 @@ const GetInvolved = () => {
                             fontSize={{ base: "xs", md: "md" }}
                           >
                             <List.Indicator asChild color="red.600">
-                              <LuCircleCheck />
+                              <CircleCheck />
                             </List.Indicator>
                             {benefit}
                           </List.Item>

@@ -18,7 +18,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { LuGrid3X3 } from "react-icons/lu";
+import { Grid3X3 } from "lucide-react";
 
 interface GalleryDialogProps {
   galleryOpen: boolean;
@@ -57,7 +57,7 @@ const GalleryDialog = ({
           }}
           w={{base: "50%", md: "15%"}}
         >
-          View All <Icon as={LuGrid3X3} boxSize={4} />
+          View All <Icon as={Grid3X3} boxSize={4} />
         </Button>
       </DialogTrigger>
       <DialogBackdrop />
