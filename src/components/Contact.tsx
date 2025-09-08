@@ -15,6 +15,7 @@ import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import SocialButton from "./SocialButton";
 import emailjs from "@emailjs/browser";
+import { IconText } from "./IconText";
 
 // form fields
 interface FormValues {
@@ -130,40 +131,8 @@ const Contact = () => {
           </Box>
         </Flex>
         <Flex mt={6} flexDir={{ base: "column", md: "row" }} gap={4}>
-          <Flex w={{ md: "35%" }} alignItems="center" gap={2}>
-            <Box
-              display="inline-flex"
-              alignItems="center"
-              justifyContent="center"
-              w={10}
-              h={10}
-              bg="red.600"
-              borderRadius="100%"
-              p={2}
-            >
-              <Mail size={20} color="white" />
-            </Box>
-            <Text color="blackAlpha.700" fontSize={{ base: "sm", md: "md" }}>
-              info@radiancereach.org
-            </Text>
-          </Flex>
-          <Flex w={{ md: "35%" }} alignItems="center" gap={2}>
-            <Box
-              display="inline-flex"
-              alignItems="center"
-              justifyContent="center"
-              w={10}
-              h={10}
-              bg="red.600"
-              borderRadius="100%"
-              p={2}
-            >
-              <Phone size={20} color="white" />
-            </Box>
-            <Text color="blackAlpha.700" fontSize={{ base: "sm", md: "md" }}>
-              +2347012345678
-            </Text>
-          </Flex>
+          <IconText icon={Mail} text="info@radiancereach.org" />
+          <IconText icon={Phone} text="+2347012345678"/>
         </Flex>
       </Flex>
       {/* Message area */}
