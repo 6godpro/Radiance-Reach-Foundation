@@ -175,7 +175,7 @@ const GetInvolved = () => {
                             fontSize={{ base: "xs", md: "md" }}
                           >
                             <List.Indicator asChild color="red.600">
-                              <CircleCheck />
+                              <CircleCheck size={12}/>
                             </List.Indicator>
                             {benefit}
                           </List.Item>
