@@ -43,9 +43,13 @@ const About = ({ setFullScreen }: aboutProps) => {
           lineHeight="1.7"
           color="gray.700"
         >
-          We are a dedicated team committed to driving meaningful change in
-          communities worldwide by building sustainable programs that meet real
-          needs and create lasting opportunities.
+          We are a charity driven by compassion, built to serve. Born from a
+          deep desire to ease the burden of those going through hard times, our
+          mission is rooted in love, empathy, and action. We support families in
+          need, care for children who lack the basics of life, and provide
+          essential support to women in need. We believe in showing up for one
+          another by bringing light and hope where it's needed most. Every life
+          we touch is a reminder why we began.
         </Text>
       </Box>
 
@@ -67,18 +71,13 @@ const About = ({ setFullScreen }: aboutProps) => {
             {/* Mission */}
             <Card
               title="Our Mission"
-              text="Our mission is to empower communities by identifying real
-                  needs and developing sustainable initiatives that lay the
-                  groundwork for future access to quality education, healthcare,
-                  and opportunities for advancement."
+              text="To provide practical support, nourishment and encouragement to families, children, and women in vulnerable situations thereby restoring hope, dignity, and a sense of belonging through every act of care."
             />
 
             {/* Vision */}
             <Card
               title="Our Vision"
-              text="To build a world where every community thrives through
-                  equitable access to opportunity, dignity, and sustainable
-                  growth."
+              text="To create a world where no family feels forgotten, no child is left in need, and every woman is empowered. To help them all rise through kindness, support and shared humanity."
             />
           </SimpleGrid>
         </Box>
