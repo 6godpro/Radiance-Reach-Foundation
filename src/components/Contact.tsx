@@ -8,7 +8,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { BeatLoader } from "react-spinners";
 import { Mail, Phone } from "lucide-react";
@@ -66,7 +66,7 @@ const Contact = () => {
   return (
     <Flex
       id="contact us"
-      width={{base: "90vw", md: "80vw"}}
+      width={{ base: "90vw", md: "80vw" }}
       justifyContent="center"
       margin="0 auto"
       flexDir={{ base: "column", md: "row" }}
@@ -108,31 +108,28 @@ const Contact = () => {
           </Text>
           <Box display="flex" gap={2} mt={{ base: 2 }}>
             <SocialButton
-              icon={<FaInstagram />}
+              icon={FaInstagram}
               bg="red.100"
               color="red.600"
-              href="https://www.instagram.com"
-              shadow="0 0 20px rgba(220, 38, 38, 0.7)"
+              href="https://www.instagram.com/radiancereachcharityfoundation"
+              shadow="0 0 10px rgba(220, 38, 38, 0.7)"
             />
             <SocialButton
-              icon={<FaFacebook />}
+              icon={FaFacebook}
               bg="blue.100"
               color="blue.700"
-              href="https://www.facebook.com"
-              shadow="0 0 20px rgba(23, 61, 166, 0.7)"
-            />
-            <SocialButton
-              icon={<FaTwitter />}
-              bg="blue.100"
-              color="blue.400"
-              href="https://www.twitter.com"
-              shadow="0 0 20px rgba(96, 165, 250, 0.7)"
+              href="https://web.facebook.com/p/Radiance-Reach-Charity-Foundation-61569795354383/?_rdc=1&_rdr#"
+              shadow="0 0 10px rgba(23, 61, 166, 0.7)"
             />
           </Box>
         </Flex>
-        <Flex mt={6} flexDir={{ base: "column", md: "row" }} gap={4}>
-          <IconText icon={Mail} text="info@radiancereach.org" />
-          <IconText icon={Phone} text="+2347012345678"/>
+        <Flex
+          mt={6}
+          flexDir={{ base: "column", md: "row" }}
+          gap={{ base: 4, md: 16 }}
+        >
+          <IconText icon={Mail} text="radiancereachcharity@gmail.com" />
+          <IconText icon={Phone} text="+2348157174593" />
         </Flex>
       </Flex>
       {/* Message area */}
