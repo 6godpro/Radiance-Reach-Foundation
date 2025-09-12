@@ -12,14 +12,4 @@ export const events = [
     title: "2024 Christmas Outreach",
     images: toImages(decemberModules),
   },
-  {
-    id: "december-outreach",
-    title: "2024 Christmas Outreach",
-    images: toImages(decemberModules),
-  },
-  {
-    id: "december-outreach",
-    title: "2024 Christmas Outreach",
-    images: toImages(decemberModules),
-  },
 ];
