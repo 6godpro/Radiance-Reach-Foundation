@@ -26,6 +26,11 @@ interface FormValues {
 
 const MotionButton = motion.create(Button);
 
+// EmailJS environment variables
+const serviceId = import.meta.env.EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [buttonText, setButtonText] = useState("Send Message");
@@ -42,10 +47,10 @@ const Contact = () => {
 
     await emailjs
       .send(
-        "service_ichkf3d",
-        "template_9mv0bjq",
+        serviceId,
+        templateId,
         { from_email: data.email, message: data.message },
-        "8fyGZVkg62uXJ5QNP"
+        publicKey
       )
       .then(() => {
         alert("Message sent");
