@@ -20,6 +20,7 @@ const Hero = () => {
 
   return (
     <Box
+      id="home"
       position="relative"
       height="100vh"
       display="flex"
@@ -82,6 +83,21 @@ const Hero = () => {
             _hover={{ transform: "scale(1.05)" }}
             bg="red.600"
             px={{ md: "30px" }}
+            onClick={() => {
+              const el = document.getElementById("get involved");
+              const navbar = document.getElementById("navbar");
+              const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+              if (el) {
+                const sectionTop =
+                  el.getBoundingClientRect().top + window.scrollY;
+
+                window.scrollTo({
+                  top: sectionTop - navbarHeight,
+                  behavior: "smooth",
+                });
+              }
+            }}
           >
             Lend a hand
           </Button>
@@ -95,6 +111,21 @@ const Hero = () => {
             }}
             borderColor="white"
             paddingLeft={{ md: "30px" }}
+            onClick={() => {
+              const el = document.getElementById("about us");
+              const navbar = document.getElementById("navbar");
+              const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+              if (el) {
+                const sectionTop =
+                  el.getBoundingClientRect().top + window.scrollY;
+
+                window.scrollTo({
+                  top: sectionTop - navbarHeight,
+                  behavior: "smooth",
+                });
+              }
+            }}
           >
             Learn More <RiArrowRightLine />
           </Button>

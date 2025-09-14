@@ -12,7 +12,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../assets/LOGO.png";
 
-const Links: string[] = ["About Us", "Events", "Get Involved", "Contact Us"];
+const Links: string[] = ["Home", "About Us", "Events", "Get Involved", "Contact Us"];
 
 interface NavLinkProps {
   children: React.ReactNode;
@@ -56,17 +56,15 @@ const Navbar = () => {
     isLast,
   }: NavLinkProps) => (
     <Button
-      variant="ghost"
       fontSize={fontSize}
       width="fit-content"
+      height="40px"
       onMouseEnter={!isLast ? onMouseEnter : undefined}
       onMouseLeave={onMouseLeave}
       onClick={handleClick}
       fontWeight="600"
-      transition="all 0.3s ease"
       _hover={{
-        color: "white",
-        md: { transform: "scale(1.05)" },
+        color: "white"
       }}
       color={{ base: "#3e6389", md: isLast ? "white" : "#3e6389" }}
       bg={isLast ? "red.600" : "none"}
@@ -100,7 +98,7 @@ const Navbar = () => {
       id="navbar"
       px={3}
       position="fixed"
-      zIndex={3}
+      zIndex={99999}
       width="100%"
       top={0}
       bg="inherit"

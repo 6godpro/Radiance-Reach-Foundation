@@ -6,7 +6,7 @@ import GalleryDialog from "./GalleryDialog";
 import EventDialog from "./EventDialog";
 import LightboxDialog from "./LightboxDialog";
 
-const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
 
 const navIconProps = {
   position: "absolute",

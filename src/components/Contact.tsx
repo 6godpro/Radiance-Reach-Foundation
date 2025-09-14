@@ -140,7 +140,8 @@ const Contact = () => {
         bg="whiteAlpha.500"
         border="1px rgba(158, 147, 147, 0.2) solid"
         borderRadius="10px"
-        p={2}
+        px={{base: 2, md: 5}}
+        py={{base: 2, md: 5}}
         mt={{ base: 4 }}
       >
         <Stack gap="4" mt={{ base: "10px", md: "0" }}>
@@ -153,13 +154,15 @@ const Contact = () => {
             LEAVE A MESSAGE
           </Box>
           <Input
+            id="name"
             {...register("name", {
               required: { value: true, message: "Name is required" },
               minLength: { value: 3, message: "Please enter a valid name" },
             })}
             variant="outline"
             placeholder="Name"
-            size="sm"
+            size="md"
+            fontSize="16px"
             maxW={{ base: "", md: "80%" }}
             border={
               errors.email
@@ -184,7 +187,8 @@ const Contact = () => {
             })}
             variant="outline"
             placeholder="Email"
-            size="sm"
+            size="md"
+            fontSize="16px"
             maxW={{ base: "", md: "80%" }}
             border={
               errors.email
@@ -203,7 +207,8 @@ const Contact = () => {
             {...register("message", { required: "Please enter a message" })}
             variant="outline"
             placeholder="Enter your message here"
-            size="sm"
+            size="md"
+            fontSize="16px"
             minH={{ base: "120px", md: "120px" }}
             maxW={{ base: "", md: "80%" }}
             border={

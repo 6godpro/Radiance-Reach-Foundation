@@ -8,7 +8,7 @@ import { MdOutlineVolunteerActivism } from "react-icons/md";
 import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const GetInvolved = () => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -113,9 +113,9 @@ const GetInvolved = () => {
                   transition="all 0.3s ease"
                   _hover={{
                     boxShadow: "sm",
-                    transform: "translateY(-10px)",
                     bg: "white",
                   }}
+                  className="group"
                 >
                   <Box
                     display="flex"
@@ -125,7 +125,6 @@ const GetInvolved = () => {
                     gap={4}
                     textAlign="center"
                   >
-                    {/* Icon that scales on parent hover */}
                     <Box
                       display="inline-flex"
                       alignItems="center"
@@ -134,6 +133,8 @@ const GetInvolved = () => {
                       h={20}
                       bg="red.600"
                       borderRadius="100%"
+                      transition="all 0.3s ease"
+                      _groupHover={{transform: "scale(1.05)"}}
                     >
                       <way.icon size={50} color="white" />
                     </Box>
@@ -192,6 +193,11 @@ const GetInvolved = () => {
                     color="white"
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 800 }}
+                    onClick={() => {
+                      const el = document.getElementById("name");
+                      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+                      el?.focus();
+                    }}
                   >
                     {way.cta}
                   </MotionButton>
