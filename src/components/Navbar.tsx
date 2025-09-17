@@ -4,7 +4,6 @@ import {
   Flex,
   HStack,
   IconButton,
-  Button,
   useDisclosure,
   Stack,
   Image,
@@ -12,16 +11,9 @@ import {
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../assets/LOGO.png";
+import NavLink from "./NavLink";
 
 const Links: string[] = ["Home", "About Us", "Events", "Get Involved", "Contact Us"];
-
-interface NavLinkProps {
-  children: React.ReactNode;
-  onMouseEnter: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  onMouseLeave: () => void;
-  fontSize: string;
-  isLast: boolean;
-}
 
 const Navbar = () => {
   const { open, onOpen, onClose, setOpen } = useDisclosure();
@@ -30,50 +22,6 @@ const Navbar = () => {
     left: 0,
     opacity: 0,
   });
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const section = document.getElementById(
-      e.currentTarget.innerText.toLowerCase()
-    );
-    const navbar = document.getElementById("navbar");
-    const navbarHeight = navbar ? navbar.offsetHeight : 0;
-
-    if (section) {
-      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-
-      window.scrollTo({
-        top: sectionTop - navbarHeight,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Navigation Link component
-  const NavLink = ({
-    children,
-    onMouseEnter,
-    onMouseLeave,
-    fontSize,
-    isLast,
-  }: NavLinkProps) => (
-    <Button
-      fontSize={fontSize}
-      width="fit-content"
-      height="40px"
-      onMouseEnter={!isLast ? onMouseEnter : undefined}
-      onMouseLeave={onMouseLeave}
-      onClick={handleClick}
-      fontWeight="600"
-      _hover={{
-        color: "white"
-      }}
-      color={{ base: "#3e6389", md: isLast ? "white" : "#3e6389" }}
-      bg={isLast ? "red.600" : "none"}
-      rounded={isLast ? "full" : "none"}
-    >
-      {children}
-    </Button>
-  );
 
   // Function to handle mouse enter
   const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -99,7 +47,7 @@ const Navbar = () => {
       id="navbar"
       px={2}
       position="fixed"
-      zIndex={99999}
+      zIndex={11}
       width="100%"
       top={0}
       bg="inherit"

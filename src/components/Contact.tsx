@@ -253,6 +253,7 @@ const Contact = () => {
                   bg="whiteAlpha.700"
                   rounded="md"
                   size="md"
+                  color="black"
                 >
                   <Select.HiddenSelect />
                   <Select.Control>
