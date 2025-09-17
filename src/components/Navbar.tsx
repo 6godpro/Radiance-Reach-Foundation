@@ -7,6 +7,7 @@ import {
   Button,
   useDisclosure,
   Stack,
+  Image,
 } from "@chakra-ui/react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
@@ -96,13 +97,13 @@ const Navbar = () => {
   return (
     <Box
       id="navbar"
-      px={3}
+      px={2}
       position="fixed"
       zIndex={99999}
       width="100%"
       top={0}
       bg="inherit"
-      borderBottom="2px #3e6389 solid"
+      borderBottom="2px solid #3e6389"
     >
       <Box
         cursor="pointer"
@@ -119,11 +120,11 @@ const Navbar = () => {
         transform="translateY(-50%)"
         left={{ md: 10 }}
       >
-        <img src={logo} alt="radiance-reach-logo" width="50px" />
+        <Image src={logo} alt="radiance-reach-logo" w={{base: "30px", md: "50px"}} />
         <p>RADIANCE REACH CHARITY FOUNDATION</p>
       </Box>
       <Flex
-        h={16}
+        h={{base: 12, md: 16}}
         alignItems="center"
         justifyContent={{ base: "flex-end", md: "center" }}
       >
@@ -184,7 +185,6 @@ const Navbar = () => {
           display={{ md: "none" }}
           mb={2}
           position="absolute"
-          top="16"
           left="0"
           right="0"
           bg="inherit"
