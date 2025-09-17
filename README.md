@@ -76,7 +76,7 @@ Contributions are welcome!
 This project is licensed under the MIT License.
 
 ## 🌟 Acknowledgements
-Chakra UI for accessible React components
-Framer Motion for animations
-React Icons
-All volunteers and contributors who made Radiance Reach possible ✨
+1. Chakra UI for accessible React components
+2. Framer Motion for animations
+3. React Icons
+4. All volunteers and contributors who made Radiance Reach possible ✨
