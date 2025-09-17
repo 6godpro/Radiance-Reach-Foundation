@@ -16,7 +16,7 @@ const SocialButton = ({ bg, color, shadow, href, icon: Icon }: SocialBtnProps) =
         bg={bg}
         color={color}
         rounded="full"
-        size="md"
+        size="sm"
         transition="all 0.3s ease-in"
         _hover={{
           boxShadow: shadow,
