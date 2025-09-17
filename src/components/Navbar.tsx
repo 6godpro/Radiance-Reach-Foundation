@@ -132,7 +132,7 @@ const Navbar = () => {
         <HStack alignItems="center">
           <HStack
             as="nav"
-            gap={10}
+            gap={{base: 2, md: 2}}
             justifyContent="center"
             display={{ base: "none", md: "flex" }}
             position="relative"
