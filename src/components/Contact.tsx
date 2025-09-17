@@ -44,11 +44,11 @@ const helpOptions = createListCollection({
   ],
 });
 
-const subjectMap: Record<string, string> = {
+const subjectMap:Record<string, string> = {
   volunteer: "Volunteer Application",
   donation: "Donation Inquiry",
   partner: "Partnership Request",
-};
+}
 
 const contactFieldStyleProp = {
   variant: "outline" as const,
@@ -75,7 +75,7 @@ const Contact = () => {
     setLoading(true);
     setButtonText("");
 
-    const mappedTitle = subjectMap[data.title];
+    const mappedTitle = subjectMap[data.title]
 
     await emailjs
       .send(
@@ -127,7 +127,7 @@ const Contact = () => {
         </Text>
         <Text
           as="p"
-          fontSize={{ base: "sm", md: "lg" }}
+          fontSize={{ base: "sm", md: "xl" }}
           textAlign="justify"
           marginBottom="4"
           width={{ base: "100%", md: "90%" }}
@@ -138,14 +138,16 @@ const Contact = () => {
           Reach out and let's start making a difference together.
         </Text>
 
+        {/* Social media handles */}
         <Flex
-          mt={2}
-          flexDir="column"
-          gap={4}
+          alignItems={{ md: "center" }}
+          gap={{ base: 0, md: 5 }}
+          flexDir={{ base: "column", md: "row" }}
         >
-          <IconText icon={Mail} text="radiancereachcharity@gmail.com" />
-          <IconText icon={Phone} text="+2348157174593" />
-          <Flex gap={4} mt={4}>
+          <Text as="p" fontSize={{ base: "sm", md: "xl" }} color="gray.700">
+            Check us out on our socials
+          </Text>
+          <Box display="flex" gap={2} mt={{ base: 2 }}>
             <SocialButton
               icon={FaInstagram}
               bg="red.100"
@@ -160,7 +162,15 @@ const Contact = () => {
               href="https://web.facebook.com/p/Radiance-Reach-Charity-Foundation-61569795354383/?_rdc=1&_rdr#"
               shadow="0 0 10px rgba(23, 61, 166, 0.7)"
             />
-          </Flex>
+          </Box>
+        </Flex>
+        <Flex
+          mt={6}
+          flexDir={{ base: "column", md: "row" }}
+          gap={{ base: 4, md: 16 }}
+        >
+          <IconText icon={Mail} text="radiancereachcharity@gmail.com" />
+          <IconText icon={Phone} text="+2348157174593" />
         </Flex>
       </Flex>
 
