@@ -72,7 +72,7 @@ const Navbar = () => {
         <p>RADIANCE REACH CHARITY FOUNDATION</p>
       </Box>
       <Flex
-        h={{base: 12, md: 16}}
+        h={16}
         alignItems="center"
         justifyContent={{ base: "flex-end", md: "center" }}
       >
