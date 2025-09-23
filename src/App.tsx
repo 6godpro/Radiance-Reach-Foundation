@@ -9,6 +9,7 @@ import VideoSection from "./components/VideoPlayer";
 import about from "./assets/about.mp4";
 import { useState } from "react";
 import GetInvolved from "./components/GetInvolved";
+import { Toaster } from "./components/ui/toaster";
 
 const App = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -23,6 +24,7 @@ const App = () => {
       <ScrollToTop />
       <Footer />
       <VideoSection about={about} isFullScreen={isFullScreen} setFullScreen={setIsFullScreen} />
+      <Toaster />
     </div>
   );
 };

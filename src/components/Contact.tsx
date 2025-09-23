@@ -20,6 +20,7 @@ import { motion } from "framer-motion";
 import SocialButton from "./ui/SocialButton";
 import emailjs from "@emailjs/browser";
 import { IconText } from "./ui/IconText";
+import { toaster } from "./ui/toaster";
 
 // form fields
 interface FormValues {
@@ -92,10 +93,21 @@ const Contact = () => {
       .then(() => {
         setLoading(false);
         setButtonText("Sent");
+        toaster.create({
+          title: "Message sent",
+          description: "We've successfully sent your message.",
+          type: "success",
+          duration: 3000,
+        });
         reset();
       })
       .catch(() => {
-        alert("Message sending failed");
+        toaster.create({
+          title: "Message sending failed",
+          description: "There was an error in sending your message.",
+          type: "error",
+          duration: 3000,
+        });
       });
 
     setTimeout(() => {
