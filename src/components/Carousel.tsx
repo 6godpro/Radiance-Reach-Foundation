@@ -5,6 +5,8 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import GalleryDialog from "./GalleryDialog";
 import EventDialog from "./EventDialog";
 import LightboxDialog from "./LightboxDialog";
+import { SanityEventType } from "@/sanityTypes";
+import { fetchEvents, previewImages } from "@/event-data";
 
 const MotionImage = motion.create(Image);
 
@@ -26,22 +28,22 @@ const navIconProps = {
   zIndex: 2,
 };
 
-interface CarouselProps {
-  events: {
-    title: string;
-    images: string[];
-  }[];
-}
-
-const Carousel = ({ events }: CarouselProps) => {
-  // Flatten all event images for carousel preview
-  const allImages = events.flatMap((e) => e.images);
-  const previewImages = allImages.slice(0, 4);
-
+const Carousel = () => {
   const [direction, setDirection] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [clicked, setClicked] = useState(false);
   const autoScrollRef = useRef<any>(null);
+  const [events, setEvents] = useState<SanityEventType[]>([]);
+
+  useEffect(() => {
+    fetchEvents()
+      .then((res) => {
+        setEvents(res ? res : []);
+      })
+      .catch((err) => {
+        console.error("Error fetching: ", err);
+      });
+  }, []);
 
   const {
     open: galleryOpen,
@@ -58,10 +60,7 @@ const Carousel = ({ events }: CarouselProps) => {
     onOpen: onLightboxOpen,
     onClose: onLightboxClose,
   } = useDisclosure(); // individual event photo modal
-  const [activeEvent, setActiveEvent] = useState<{
-    title: string;
-    images: string[];
-  } | null>(null);
+  const [activeEvent, setActiveEvent] = useState<SanityEventType | null>(null);
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
   // carousel variants
@@ -108,7 +107,7 @@ const Carousel = ({ events }: CarouselProps) => {
     onLightboxOpen();
   };
 
-  const handleEventClick = (event: { title: string; images: string[] }) => {
+  const handleEventClick = (event: SanityEventType) => {
     setActiveEvent(event);
     onEventOpen();
   };
@@ -223,11 +222,13 @@ const Carousel = ({ events }: CarouselProps) => {
         onGalleryOpen={onGalleryOpen}
         onGalleryClose={onGalleryClose}
         handleEventClick={handleEventClick}
+        events={events}
       />
 
       {/* Event-specific Dialog */}
       <EventDialog
         eventOpen={eventOpen}
+        onEventOpen={onEventOpen}
         onEventClose={onEventClose}
         handleImageClick={handleImageClick}
         event={activeEvent}
