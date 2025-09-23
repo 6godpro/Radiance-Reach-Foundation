@@ -1,5 +1,4 @@
-import { urlFor } from "@/sanityImageBuilder";
-import { SanityEventType } from "@/sanityTypes";
+import { events } from "@/event-data";
 import {
   DialogRoot,
   DialogTrigger,
@@ -25,16 +24,14 @@ interface GalleryDialogProps {
   galleryOpen: boolean;
   onGalleryOpen: () => void;
   onGalleryClose: () => void;
-  handleEventClick: (event: SanityEventType) => void;
-  events: SanityEventType[];
+  handleEventClick: (event: { title: string; images: string[] }) => void;
 }
 
 const GalleryDialog = ({
   galleryOpen,
   onGalleryOpen,
   onGalleryClose,
-  handleEventClick,
-  events,
+  handleEventClick
 }: GalleryDialogProps) => {
   return (
     <DialogRoot
@@ -58,7 +55,7 @@ const GalleryDialog = ({
             border: "1px solid",
             borderColor: "red.600",
           }}
-          w={{ base: "50%", md: "15%" }}
+          w={{base: "50%", md: "15%"}}
         >
           View All <Icon as={Grid3X3} boxSize={4} />
         </Button>
@@ -87,7 +84,7 @@ const GalleryDialog = ({
                     {event.title}
                   </Text>
                   <SimpleGrid columns={{ base: 2, md: 4 }} gap={4}>
-                    {event.images.slice(0, 4).map((photo, index) => (
+                    {event.images.slice(0, 4).map((img, index) => (
                       <motion.div
                         key={index}
                         transition={{
@@ -100,7 +97,7 @@ const GalleryDialog = ({
                         onClick={() => handleEventClick(event)}
                       >
                         <Image
-                          src={urlFor(photo).url()}
+                          src={img}
                           alt={`${event.title} image ${index + 1}`}
                           objectFit="cover"
                           rounded="lg"

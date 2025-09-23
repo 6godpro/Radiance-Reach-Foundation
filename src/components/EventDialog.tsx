@@ -1,5 +1,3 @@
-import { urlFor } from "@/sanityImageBuilder";
-import { SanityEventType } from "@/sanityTypes";
 import {
   DialogRoot,
   DialogBackdrop,
@@ -16,13 +14,12 @@ import { motion } from "framer-motion";
 
 interface EventDialogProps {
   eventOpen: boolean;
-  onEventOpen: () => void;
   onEventClose: () => void;
-  event: SanityEventType | null;
+  event: { title: string; images: string[] } | null;
   handleImageClick: (img: string) => void;
 }
 
-const EventDialog = ({eventOpen, onEventOpen, onEventClose, event, handleImageClick}: EventDialogProps) => {
+const EventDialog = ({eventOpen, onEventClose, event, handleImageClick}: EventDialogProps) => {
   return (
     <DialogRoot
       size={{ mdDown: "full", md: "cover" }}
@@ -30,7 +27,7 @@ const EventDialog = ({eventOpen, onEventOpen, onEventClose, event, handleImageCl
       motionPreset="slide-in-bottom"
       scrollBehavior="outside"
       open={eventOpen}
-      onOpenChange={(e) => (e.open ? onEventOpen() : onEventClose())}
+      onOpenChange={(e) => (e.open ? null: onEventClose())}
     >
       <DialogBackdrop bg="blackAlpha.600" backdropFilter="blur(6px)" />
       <DialogPositioner>
@@ -48,17 +45,17 @@ const EventDialog = ({eventOpen, onEventOpen, onEventClose, event, handleImageCl
           </DialogCloseTrigger>
           <DialogBody>
             <SimpleGrid columns={{ base: 1, md: 3 }} gap={4}>
-              {event?.images.map((photo, idx) => (
+              {event?.images.map((img, idx) => (
                 <motion.div
                   key={idx}
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
                   style={{ cursor: "pointer" }}
-                  onClick={() => handleImageClick(urlFor(photo).url())}
+                  onClick={() => handleImageClick(img)}
                 >
                   <Image
                     key={idx}
-                    src={urlFor(photo).url()}
+                    src={img}
                     alt={`${event?.title} image ${idx + 1}`}
                     objectFit="cover"
                     rounded="lg"

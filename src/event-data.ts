@@ -1,20 +1,15 @@
-import { client } from "./sanityClient";
-import { SanityEventType } from "./sanityTypes";
+const decemberModules = import.meta.glob("./assets/december_outreach*.jpg", {
+  eager: true,
+});
 
-export const previewImages = [
-  "/src/assets/december_outreach1.jpg",
-  "/src/assets/december_outreach10.jpg",
-  "/src/assets/december_outreach11.jpg",
-  "/src/assets/december_outreach12.jpg",
+// Convert glob imports into arrays of image paths
+const toImages = (modules: Record<string, any>) =>
+  Object.values(modules).map((mod: any) => mod.default);
+
+export const events = [
+  {
+    id: "december-outreach",
+    title: "2024 Christmas Outreach",
+    images: toImages(decemberModules),
+  },
 ];
-
-export const fetchEvents = async () => {
-  try {
-    const res = await client.fetch<SanityEventType[]>(
-      "*[_type == 'event']{title,'images': *[_type == 'photo' && references(^._id)][0].image[]{asset}}"
-    );
-    return res ?? [];
-  } catch (err) {
-    console.error("Failed to fetch photos:", err);
-  }
-};
