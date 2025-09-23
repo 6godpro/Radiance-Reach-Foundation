@@ -97,7 +97,7 @@ const Contact = () => {
           title: "Message sent",
           description: "We've successfully sent your message.",
           type: "success",
-          duration: 3000,
+          duration: 5000,
         });
         reset();
       })
@@ -106,7 +106,7 @@ const Contact = () => {
           title: "Message sending failed",
           description: "There was an error in sending your message.",
           type: "error",
-          duration: 3000,
+          duration: 5000,
         });
       });
 
