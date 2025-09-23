@@ -1,6 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useRef } from "react";
-import { events } from "@/event-data";
 import Carousel from "./Carousel";
 
 const Events = () => {
@@ -45,8 +44,7 @@ const Events = () => {
           communities. Be a part of our journey and help us make a difference.
         </Text>
       </Box>
-
-      <Carousel events={events} />
+      <Carousel />
     </Box>
   );
 };
