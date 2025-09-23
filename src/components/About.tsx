@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import playIcon from "../assets/play-icon.png";
 import thumbnail from "../assets/thumbnail.jpg";
-import Card from "./Card";
+import Card from "./ui/Card";
 
 gsap.registerPlugin(ScrollTrigger);
 

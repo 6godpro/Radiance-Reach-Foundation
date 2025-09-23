@@ -11,9 +11,15 @@ import {
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../assets/LOGO.png";
-import NavLink from "./NavLink";
+import NavLink from "./ui/NavLink";
 
-const Links: string[] = ["Home", "About Us", "Events", "Get Involved", "Contact Us"];
+const Links: string[] = [
+  "Home",
+  "About Us",
+  "Events",
+  "Get Involved",
+  "Contact Us",
+];
 
 const Navbar = () => {
   const { open, onOpen, onClose, setOpen } = useDisclosure();
@@ -68,7 +74,11 @@ const Navbar = () => {
         transform="translateY(-50%)"
         left={{ md: 10 }}
       >
-        <Image src={logo} alt="radiance-reach-logo" w={{base: "30px", md: "50px"}} />
+        <Image
+          src={logo}
+          alt="radiance-reach-logo"
+          w={{ base: "30px", md: "50px" }}
+        />
         <p>RADIANCE REACH CHARITY FOUNDATION</p>
       </Box>
       <Flex
@@ -80,7 +90,7 @@ const Navbar = () => {
         <HStack alignItems="center">
           <HStack
             as="nav"
-            gap={{base: 2, md: 2}}
+            gap={{ base: 2, md: 2 }}
             justifyContent="center"
             display={{ base: "none", md: "flex" }}
             position="relative"

@@ -17,9 +17,9 @@ import { useForm, Controller } from "react-hook-form";
 import { BeatLoader } from "react-spinners";
 import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
-import SocialButton from "./SocialButton";
+import SocialButton from "./ui/SocialButton";
 import emailjs from "@emailjs/browser";
-import { IconText } from "./IconText";
+import { IconText } from "./ui/IconText";
 
 // form fields
 interface FormValues {
@@ -138,11 +138,7 @@ const Contact = () => {
           Reach out and let's start making a difference together.
         </Text>
 
-        <Flex
-          mt={2}
-          flexDir="column"
-          gap={4}
-        >
+        <Flex mt={2} flexDir="column" gap={4}>
           <IconText icon={Mail} text="radiancereachcharity@gmail.com" />
           <IconText icon={Phone} text="+2348157174593" />
           <Flex gap={4} mt={4}>

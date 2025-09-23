@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useRef } from "react";
-import Carousel from "./Carousel";
+import Carousel from "./ui/Carousel";
 
 const Events = () => {
   const ref = useRef<HTMLDivElement | null>(null);
