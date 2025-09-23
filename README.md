@@ -9,6 +9,9 @@ This project combines **design, storytelling, and interactivity** to showcase Ra
 The frontend is built with **React + Chakra UI** and powered by an already configured **Sanity CMS backend**, which enables administrators to manage events, outreach programs, galleries, and blog posts without touching code.
 
 ---
+![Screenshot of the Landing Page](https://github.com/6godpro/Radiance-Reach-Foundation/blob/main/src/assets/landing_page.png)
+
+---
 
 ## 🚀 Features
 - **Modern Landing Page**
