@@ -1,10 +1,22 @@
 import { Box, Text } from "@chakra-ui/react";
-import { useRef } from "react";
-import { events } from "@/event-data";
+import { useEffect, useRef, useState } from "react";
+import { fetchEvents } from "@/event-data";
 import Carousel from "./Carousel";
+import { SanityEventType } from "@/sanityTypes";
 
 const Events = () => {
   const ref = useRef<HTMLDivElement | null>(null);
+  const [events, setEvents] = useState<SanityEventType[]>([]);
+
+  useEffect(() => {
+    fetchEvents()
+      .then((res) => {
+        setEvents(res ? res : []);
+      })
+      .catch((err) => {
+        console.error("Error fetching: ", err);
+      });
+  }, []);
 
   return (
     <Box
