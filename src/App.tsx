@@ -17,8 +17,8 @@ const App = () => {
     <div style={{ background: "#faf5ef" }}>
       <Navbar />
       <Hero />
-      <About setFullScreen={setIsFullScreen}/>
       <Events />
+      <About setFullScreen={setIsFullScreen}/>
       <GetInvolved />
       <Contact />
       <ScrollToTop />
