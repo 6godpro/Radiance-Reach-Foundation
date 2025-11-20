@@ -11,3 +11,10 @@ export type SanityEventType = {
   title: string;
   images: PhotoType[];
 };
+
+export type SanityUpcomingEventType = {
+  title: string;
+  description: string;
+  poster: PhotoType;
+  bannerMessage: string;
+}
