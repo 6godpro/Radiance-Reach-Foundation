@@ -27,7 +27,7 @@ const Events = () => {
           mb={4}
           color="red.600"
         >
-          Events Highlights
+          Event Highlights
         </Text>
         <Text
           as="p"
