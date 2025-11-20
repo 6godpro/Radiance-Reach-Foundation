@@ -15,8 +15,8 @@ import NavLink from "./ui/NavLink";
 
 const Links: string[] = [
   "Home",
-  "About Us",
   "Events",
+  "About Us",
   "Get Involved",
   "Contact Us",
 ];
