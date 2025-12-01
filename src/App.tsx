@@ -31,10 +31,10 @@ const App = () => {
 
   return (
     <div style={{ background: "#faf5ef" }}>
-      <Navbar />
       {event?.bannerMessage && (
         <AnnouncementBar bannerMessage={event.bannerMessage} />
       )}
+      <Navbar />
       <Hero />
       <UpcomingEvent event={event} />
       <Events />
